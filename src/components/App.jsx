@@ -4,6 +4,7 @@ import Dogs from "pages/Dogs";
 import DogDetails from "pages/DogDetails";
 import { Layout } from "./Layout";
 import { Gallery } from "./Gallery";
+import { Subbreads } from "./Subbreads";
 
 export const App = () => {
  
@@ -13,7 +14,7 @@ return (
     <Route index element={<Home />} />
     <Route path="dogs" element={<Dogs />} />
     <Route path="dogs/:dogId" element={<DogDetails />} >
-      <Route path="subbreads" element={<div>Subbreads</div>} />
+      <Route path="subbreads" element={<Subbreads />} />
       <Route path="gallery" element={<Gallery />} />
     </Route >
   </Route>

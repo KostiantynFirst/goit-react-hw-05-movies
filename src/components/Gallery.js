@@ -1,3 +1,8 @@
+import { useParams } from "react-router-dom"
+
 export const Gallery = () => {
-    return <div>Image Gallery</div>
+
+    const {dogId} = useParams();
+
+    return <div>Image Gallery: {dogId}</div>
 }
