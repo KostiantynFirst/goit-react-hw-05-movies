@@ -3,7 +3,7 @@ import { Link, Outlet } from "react-router-dom";
 
 const DogDetails = () => {
     const { dogId } = useParams();
-    console.log(dogId);
+    // console.log(dogId);
 
     // useEffect(() => {
     //HTTP запрос 
