@@ -3,16 +3,17 @@ import { Link, useSearchParams } from "react-router-dom";
 const Dogs = () => {
 
 const [searchParams, setSearchParams ] = useSearchParams();
-
-    // useEffect(() => {
+const dogId = searchParams.get('dogId');
+   
+// useEffect(() => {
     //HTTP запрос 
     // }, [])
 
 
     return (
     <div>
-        <input type="text" />
-        <button onClick={() => setSearchParams}>change sp</button>
+        <input type="text" value={dogId} onChange={e => setSearchParams({dogId: e.target.value})} />
+        <button onClick={() => setSearchParams({c: 'hello'})}>change sp</button>
         <ul>
         {['dog-1','dog-2','dog-3','dog-4','dog-5'].map(dog => {
           return (
