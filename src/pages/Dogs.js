@@ -21,11 +21,21 @@ const dogId = searchParams.get('dogId') ?? '';
     //HTTP запрос 
     // }, [])
 
+const updateQueryString = e => {
+    const dogIdValue = e.target.value
+    if( dogIdValue === '') {
+        return setSearchParams({})
+    }
+
+    setSearchParams({dogId: dogIdValue});
+}
+
+
 const visibleDogs = dogs.filter(dog => dog.includes(dogId));
 
 return (
     <div>
-        <input type="text" value={dogId} onChange={e => setSearchParams({dogId: e.target.value})} />
+        <input type="text" value={dogId} onChange={updateQueryString} />
         {/* <button onClick={() => setSearchParams({c: 'hello'})}>change sp</button> */}
         <ul>
         {visibleDogs.map(dog => {
