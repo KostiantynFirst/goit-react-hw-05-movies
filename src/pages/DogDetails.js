@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Link, Outlet } from "react-router-dom";
 
 const DogDetails = () => {
+
+   const location = useLocation();
     const { dogId } = useParams();
     // console.log(dogId);
 
@@ -9,9 +11,11 @@ const DogDetails = () => {
     //HTTP запрос 
     // }, [])
 
+    console.log(location);
     return (
     <>
-      <h1>DogDetails: {dogId}</h1>
+      <h2>DogDetails: {dogId}</h2>
+      <Link to="/dogs">Назад к странице коллекции</Link>
         <ul>
             <li>
                 <Link to="subbreads">Подпороды</Link>

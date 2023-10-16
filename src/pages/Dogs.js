@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 
 // https://kostiantynfirst.github.io/goit-react-hw-05-movies/dogs?dogId=4
 
@@ -13,6 +13,8 @@ const [dogs, setDogs] = useState([
     'dog-4',
     'dog-5',
     ]);
+
+    const location = useLocation();
 
 const [searchParams, setSearchParams ] = useSearchParams();
 const dogId = searchParams.get('dogId') ?? '';
@@ -32,6 +34,9 @@ const updateQueryString = e => {
 
 
 const visibleDogs = dogs.filter(dog => dog.includes(dogId));
+
+console.log(location);
+console.log(setDogs);
 
 return (
     <div>
