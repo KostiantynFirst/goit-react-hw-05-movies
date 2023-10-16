@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgoit_react_hw_05_movies=self.webpackChunkgoit_react_hw_05_movies||[]).push([[301],{301:function(e,r,n){n.r(r),n.d(r,{Subbreads:function(){return u}});var s=n(689),t=n(184),u=function(){var e=(0,s.UO)().dogId;return(0,t.jsxs)("div",{children:["Subbreads: ",e," "]})}}}]);
+//# sourceMappingURL=301.a3eb168a.chunk.js.map
