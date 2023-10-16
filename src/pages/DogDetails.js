@@ -15,7 +15,8 @@ const DogDetails = () => {
     return (
     <>
       <h2>DogDetails: {dogId}</h2>
-      <Link to="/dogs">Назад к странице коллекции</Link>
+      <Link to={location.state?.fromn ?? "/dogs"}>Назад к странице коллекции</Link>
+      {/* {location.state && location.state.from === location.state?.from} */}
         <ul>
             <li>
                 <Link to="subbreads">Подпороды</Link>

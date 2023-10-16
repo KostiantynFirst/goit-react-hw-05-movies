@@ -46,7 +46,7 @@ return (
         {visibleDogs.map(dog => {
           return (
           <li key={dog}>
-            <Link to={`${dog}`}>
+            <Link to={`${dog}`} state={{ from: location }}>
                 {dog}
             </Link>
         </li>)
