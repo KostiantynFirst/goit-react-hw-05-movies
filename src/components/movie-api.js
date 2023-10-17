@@ -11,7 +11,7 @@ export const getTrendingMovies = async () => {
         }
     }
   );
- return res;
+ return res.data.results;
 }
 
 // export const getMovie = async () => {
