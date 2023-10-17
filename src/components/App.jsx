@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Layout } from "./Layout";
+import { Layout } from "./Layout/Layout";
 
 
 const Gallery = lazy(() => import('./Gallery').then(module => ({
