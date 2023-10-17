@@ -8,11 +8,11 @@ export const Layout = () => {
         <header>
         <ul>
             <li>
-                <NavLink to="/">Домашняя</NavLink>
+                <NavLink to="/">Home</NavLink>
             </li>
         
             <li>
-            <NavLink to="/dogs">Коллекция</NavLink>
+            <NavLink to="/dogs">Movies</NavLink>
             </li>
             </ul>
         </header>
@@ -21,9 +21,6 @@ export const Layout = () => {
             <Outlet />
         </main>
             </Suspense>
-        {/* <footer>
-            Footer
-        </footer> */}
     </div>
     );
     
