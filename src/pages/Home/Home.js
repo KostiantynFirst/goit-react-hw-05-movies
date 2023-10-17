@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTrendingMovies } from "components/movie-api";
-import { MovieItem } from "./Home.styled";
+import { MovieList, MovieItem } from "./Home.styled";
 
 const Home = () => {
 
@@ -23,15 +23,13 @@ const Home = () => {
     }, [])
 
     return (
-        // <MovieList>
-        <>
+        <MovieList>
             {trandingMovies.map(({id, title}) => (
                 <MovieItem key={id}>
                     <h2>{title}</h2>
                 </MovieItem>
             ))} 
-        </>
-        // </MovieList>
+        </MovieList>
     );
 };
 
