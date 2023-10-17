@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const MovieContainer = styled.div`
     font-family: Arial, sans-serif;
@@ -34,7 +35,7 @@ export const MovieItem = styled.li`
     border: 1px solid #ccc;
 `;
 
-export const MovieTitle = styled.h2`
+export const MovieTitle = styled(Link)`
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;

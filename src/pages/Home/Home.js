@@ -30,7 +30,7 @@ const Home = () => {
             <MovieList>
                 {trandingMovies.map(({id, title}) => (
                     <MovieItem key={id}>
-                        <MovieTitle>{title}</MovieTitle>
+                        <MovieTitle to={`/movies/${id}`} key={id}>{title}</MovieTitle>
                     </MovieItem>
                 ))} 
             </MovieList>
