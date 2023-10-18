@@ -7,7 +7,7 @@ const MovieDetails = () => {
 
     const [movieDetails, setMovieDetails] = useState([]);
     const location = useLocation();
-    const backLinkLocation = useRef(location.state?.from ?? "/dogs");
+    const backLinkLocation = useRef(location.state?.from);
     const { movieId } = useParams();
     // console.log(dogId);
 
@@ -31,7 +31,7 @@ const MovieDetails = () => {
 
 
     console.log(movieDetails);
-    console.log(location);
+    // console.log(location);
     return (
     <>
       <h2>movieDetails: {movieId}</h2>

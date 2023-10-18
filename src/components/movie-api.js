@@ -23,7 +23,7 @@ export const getMoviesInfo = async (movieId) => {
   try {
     const res = await axios.get(`movie/${movieId}`, {
       params: {
-        api_key:MOVIEKEY,
+        api_key: MOVIEKEY,
         language: 'en-US' 
       }
     });
