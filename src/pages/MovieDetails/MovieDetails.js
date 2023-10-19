@@ -53,9 +53,6 @@ const MovieDetails = () => {
                     </li>
 
                 </InfoLinksList>
-                <li>
-                  
-                </li>
 
             </InfoBox>
 
