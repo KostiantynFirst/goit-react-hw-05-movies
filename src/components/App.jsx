@@ -18,7 +18,7 @@ const Subbreads = lazy(() => import('./Subbreads').then(module => ({
 
 const Home = lazy(() => import("../pages/Home/Home"));
 const Dogs = lazy(() => import("../pages/Movies"));
-const MovieDetails = lazy(() => import("../pages/MovieDetails"));
+const MovieDetails = lazy(() => import("../pages/MovieDetails/MovieDetails"));
 // const Home = lazy(() => import("../pages/Home"));
 
 

@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef, Suspense} from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { getMoviesInfo } from "components/movie-api";
+import { MainWrapper, BackLink, InfoBox, InfoLinksList, InfoItemLink } from "./MovieDetails.styled";
 
 
 const MovieDetails = () => {
@@ -9,7 +10,7 @@ const MovieDetails = () => {
     const location = useLocation();
     const backLinkLocation = useRef(location.state?.from);
     const { movieId } = useParams();
-    // console.log(dogId);
+   
 
     useEffect(() => {
         if(!movieId){
@@ -32,6 +33,8 @@ const MovieDetails = () => {
 
     console.log(movieDetails);
     // console.log(location);
+    
+    
     return (
     <>
       <h2>movieDetails: {movieId}</h2>
