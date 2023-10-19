@@ -14,7 +14,7 @@ export const Layout = () => {
             </NavItem>
         
             <NavItem>
-            <StyledNavLink to="/dogs">Movies</StyledNavLink>
+            <StyledNavLink to="/movies">Movies</StyledNavLink>
             </NavItem>
             </NavList>
         </Header>
