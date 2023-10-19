@@ -24,7 +24,6 @@ export const getMoviesInfo = async (movieId) => {
     const res = await axios.get(`movie/${movieId}`, {
       params: {
         api_key: MOVIEKEY,
-        language: 'en-US' 
       }
     });
     return res;
@@ -32,4 +31,23 @@ export const getMoviesInfo = async (movieId) => {
   } catch (error) {
     console.log('error', error);
 }
+}
+
+// 'https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1
+
+export const getMovieSearch = async (search) => {
+  try {
+    const res = await axios.get(`/search/movie`, {
+      params: {
+        api_key: MOVIEKEY,
+        adult: false,
+        language: 'en-US',
+        page: 1,
+      }
+    });
+    return res;
+    
+  } catch (error) {
+      console.log('error', error);
+  }
 }

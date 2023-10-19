@@ -1,29 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { getMovieSearch } from "components/movie-api";
 
-// https://kostiantynfirst.github.io/goit-react-hw-05-movies/dogs?dogId=4
+const Movies = () => {
 
-
-const Dogs = () => {
-
-const [dogs, setDogs] = useState([
-    'dog-1',
-    'dog-2',
-    'dog-3',
-    'dog-4',
-    'dog-5',
-    ]);
-
-    const location = useLocation();
+const [movieSearch, setMovieSearch] = useState([]);
+const [noResultsFound, setNoResultsFound] = useState(false)
+ 
+const location = useLocation();
 
 const [searchParams, setSearchParams ] = useSearchParams();
-const dogId = searchParams.get('dogId') ?? '';
+const query = searchParams.get('search'); 
    
 // useEffect(() => {
     //HTTP запрос 
     // }, [])
 
 const updateQueryString = e => {
+    e.preventDefault();
+    
     const dogIdValue = e.target.value
     if( dogIdValue === '') {
         return setSearchParams({})
@@ -57,5 +52,5 @@ return (
 
 }
 
-export default Dogs;
+export default Movies;
 

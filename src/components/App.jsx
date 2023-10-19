@@ -17,7 +17,7 @@ const Subbreads = lazy(() => import('./Subbreads').then(module => ({
 );
 
 const Home = lazy(() => import("../pages/Home/Home"));
-const Dogs = lazy(() => import("../pages/Movies"));
+const Movies = lazy(() => import("../pages/Movies/Movies"));
 const MovieDetails = lazy(() => import("../pages/MovieDetails/MovieDetails"));
 // const Home = lazy(() => import("../pages/Home"));
 
@@ -28,7 +28,7 @@ return (
   <Routes>
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
-    <Route path="dogs" element={<Dogs />} />
+    <Route path="movies" element={<Movies />} />
     <Route path="movies/:movieId" element={<MovieDetails />} >
       <Route path="subbreads" element={<Subbreads />} />
       <Route path="gallery" element={<Gallery />} />
