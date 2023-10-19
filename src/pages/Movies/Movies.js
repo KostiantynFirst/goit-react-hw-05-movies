@@ -1,53 +1,70 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { getMovieSearch } from "components/movie-api";
+import { SearchContainer, SearchInput, ResultsList, NoResultsMessage } from "./Movies.styled";
 
 const Movies = () => {
 
 const [movieSearch, setMovieSearch] = useState([]);
-const [noResultsFound, setNoResultsFound] = useState(false)
+const [noResultsFound, setNoResultsFound] = useState(false);
+let [query, setQuery] = useState('');
  
 const location = useLocation();
 
-const [searchParams, setSearchParams ] = useSearchParams();
-const query = searchParams.get('search'); 
+// const [searchParams, setSearchParams ] = useSearchParams();
+// query = searchParams.get('search'); 
    
-// useEffect(() => {
-    //HTTP запрос 
-    // }, [])
-
-const updateQueryString = e => {
-    e.preventDefault();
-    
-    const dogIdValue = e.target.value
-    if( dogIdValue === '') {
-        return setSearchParams({})
-    }
-
-    setSearchParams({dogId: dogIdValue});
+useEffect(() => {
+if(!query) {
+    setMovieSearch([]);
+    return;
 }
 
+const findMovie = async () => {
 
-const visibleDogs = dogs.filter(dog => dog.includes(dogId));
+    try {
+        const res = await getMovieSearch();
+        const movies = res.data.results;
+            if (movies.length === 0) {
+                setNoResultsFound(true);
+            } else {
+                setMovieSearch(movies);
+            }
+    } catch (error) {
+        console.error('Error fetching movies:', error);
+    }
+        
+}
 
-console.log(location);
-console.log(setDogs);
+findMovie();
+
+    }, [query])
 
 return (
-    <div>
-        <input type="text" value={dogId} onChange={updateQueryString} />
-        {/* <button onClick={() => setSearchParams({c: 'hello'})}>change sp</button> */}
-        <ul>
-        {visibleDogs.map(dog => {
-          return (
-          <li key={dog}>
-            <Link to={`${dog}`} state={{ from: location }}>
-                {dog}
-            </Link>
-        </li>)
-    })}
-        </ul>
-    </div>
+    <SearchContainer>
+        <SearchInput 
+            name="search" 
+            type="text" 
+            autoComplete="off"
+            autoFocus
+            placeholder="Search movie"
+            value="query"
+            onChange={(e) => setQuery(e.target.value)} 
+        />
+        {query && !noResultsFound && (
+            <ResultsList>
+                {movieSearch.map (({id, name, title}) => (
+                 <li key={id}>
+                    <Link to={`${id}`} state={{from:location}} key={id}>
+                    {title} {name}
+                    </Link>
+                 </li>   
+                ))}
+            </ResultsList>
+        )}
+        {noResultsFound && <NoResultsMessage>Sorry, there are no results for your query!</NoResultsMessage>}
+
+    </SearchContainer>
     ) 
 
 }
