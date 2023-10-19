@@ -7,9 +7,11 @@ const Movies = () => {
 
 const [movieSearch, setMovieSearch] = useState([]);
 const [noResultsFound, setNoResultsFound] = useState(false);
-let [query, setQuery] = useState('');
+const [query, setQuery] = useState('');
  
 const location = useLocation();
+// const searchParams = new URLSearchParams(location.search);
+// const query = searchParams.get('search');
 
 // const [searchParams, setSearchParams ] = useSearchParams();
 // query = searchParams.get('search'); 
@@ -23,7 +25,7 @@ if(!query) {
 const findMovie = async () => {
 
     try {
-        const res = await getMovieSearch();
+        const res = await getMovieSearch(query);
         const movies = res.data.results;
             if (movies.length === 0) {
                 setNoResultsFound(true);
@@ -48,7 +50,7 @@ return (
             autoComplete="off"
             autoFocus
             placeholder="Search movie"
-            value="query"
+            value={query}
             onChange={(e) => setQuery(e.target.value)} 
         />
         {query && !noResultsFound && (
