@@ -29,7 +29,7 @@ return (
   <Route path="/" element={<Layout />}>
     <Route index element={<Home />} />
     <Route path="dogs" element={<Dogs />} />
-    <Route path="dogs/:dogId" element={<MovieDetails />} >
+    <Route path="movies/:movieId" element={<MovieDetails />} >
       <Route path="subbreads" element={<Subbreads />} />
       <Route path="gallery" element={<Gallery />} />
     </Route >
