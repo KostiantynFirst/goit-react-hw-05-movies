@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, Suspense} from "react";
-import { Link, Outlet, useLocation, useParams } from "react-router-dom";
+import { Outlet, useLocation, useParams } from "react-router-dom";
 import { getMoviesInfo } from "components/movie-api";
 import { MainWrapper, BackLink, InfoBox, InfoLinksList, InfoItemLink } from "./MovieDetails.styled";
 
@@ -36,23 +36,54 @@ const MovieDetails = () => {
     
     
     return (
-    <>
-      <h2>movieDetails: {movieId}</h2>
-      <Link to={backLinkLocation.current}>Назад к странице коллекции</Link>
-      {/* {location.state && location.state.from === location.state?.from} */}
-        <ul>
-            <li>
-                <Link to="subbreads">Подпороды</Link>
-                {/* {state={{from: location.state.from}}} */}
-            </li>
-            <li>
-                <Link to="gallery">Галлерея</Link>
-            </li>
-        </ul>
+
+        <MainWrapper>
+            <BackLink to={backLinkLocation.current}>
+            Go back
+            </BackLink>
+
+            <InfoBox>
+                <p>Additional information</p>
+                <InfoLinksList>
+                    <li>
+                        <InfoItemLink>Cast</InfoItemLink>
+                    </li>
+                    <li>
+                        <InfoItemLink>Reviews</InfoItemLink>
+                    </li>
+
+                </InfoLinksList>
+                <li>
+                  
+                </li>
+
+            </InfoBox>
+
         <Suspense fallback={<div>Loading...</div>}>
-            <Outlet />
-        </Suspense>
-    </>
+             <Outlet />
+         </Suspense>
+
+        </MainWrapper>
+
+
+
+    // <>
+    //   <h2>movieDetails: {movieId}</h2>
+    //   <Link to={backLinkLocation.current}>Назад к странице коллекции</Link>
+    //   {/* {location.state && location.state.from === location.state?.from} */}
+    //     <ul>
+    //         <li>
+    //             <Link to="subbreads">Подпороды</Link>
+    //             {/* {state={{from: location.state.from}}} */}
+    //         </li>
+    //         <li>
+    //             <Link to="gallery">Галлерея</Link>
+    //         </li>
+    //     </ul>
+    //     <Suspense fallback={<div>Loading...</div>}>
+    //         <Outlet />
+    //     </Suspense>
+    // </>
     )
 
     
