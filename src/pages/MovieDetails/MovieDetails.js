@@ -31,7 +31,7 @@ const MovieDetails = () => {
     }, [movieId]);
 
 
-    console.log(movieDetails);
+    // console.log(movieDetails);
     // console.log(location);
     
     
@@ -62,29 +62,10 @@ const MovieDetails = () => {
 
         </MainWrapper>
 
-
-
-    // <>
-    //   <h2>movieDetails: {movieId}</h2>
-    //   <Link to={backLinkLocation.current}>Назад к странице коллекции</Link>
-    //   {/* {location.state && location.state.from === location.state?.from} */}
-    //     <ul>
-    //         <li>
-    //             <Link to="subbreads">Подпороды</Link>
-    //             {/* {state={{from: location.state.from}}} */}
-    //         </li>
-    //         <li>
-    //             <Link to="gallery">Галлерея</Link>
-    //         </li>
-    //     </ul>
-    //     <Suspense fallback={<div>Loading...</div>}>
-    //         <Outlet />
-    //     </Suspense>
-    // </>
-    )
+    );
 
     
   
-}
+};
 
 export default MovieDetails;  
