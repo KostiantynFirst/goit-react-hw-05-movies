@@ -7,14 +7,13 @@ const Movies = () => {
 
 const [movieSearch, setMovieSearch] = useState([]);
 const [noResultsFound, setNoResultsFound] = useState(false);
- 
 const location = useLocation();
-
 const [searchParams, setSearchParams ] = useSearchParams();
 const query = searchParams.get('search'); 
    
 useEffect(() => {
-if(!query) {
+
+    if(!query) {
     setMovieSearch([]);
     return;
 }
@@ -37,7 +36,14 @@ const findMovie = async () => {
 
 findMovie();
 
-    }, [query])
+    }, [query]);
+
+
+const onSearchQuery = (e) => {
+    const searchQuery = e.target.value;
+    setSearchParams({search: searchQuery });
+}
+
 
 return (
     <SearchContainer>
@@ -47,8 +53,8 @@ return (
             autoComplete="off"
             autoFocus
             placeholder="Search movie"
-            value={query}
-            onChange={(e) => setSearchParams(e.target.value)} 
+            value={query || ''}
+            onChange={onSearchQuery} 
         />
         {query && !noResultsFound && (
             <ResultsList>
