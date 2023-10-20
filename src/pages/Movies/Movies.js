@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getMovieSearch } from "components/movie-api";
-import { SearchContainer, SearchInput, ResultsList, NoResultsMessage } from "./Movies.styled";
+import { SearchContainer, SearchForm, ResultsList, NoResultsMessage } from "./Movies.styled";
 
 const Movies = () => {
 
@@ -12,6 +12,7 @@ const [searchParams, setSearchParams ] = useSearchParams();
 const query = searchParams.get('search'); 
    
 useEffect(() => {
+    setNoResultsFound(false);
 
     if(!query) {
     setMovieSearch([]);
@@ -40,22 +41,28 @@ findMovie();
 
 
 const onSearchQuery = (e) => {
-    const searchQuery = e.target.value;
+    e.preventDefault();
+    const form = e.currentTarget;
+    const searchQuery = form.elements.search.value;
     setSearchParams({search: searchQuery });
+    form.reset();
 }
 
 
 return (
     <SearchContainer>
-        <SearchInput 
-            name="search" 
-            type="text" 
-            autoComplete="off"
-            autoFocus
-            placeholder="Search movie"
-            value={query || ''}
-            onChange={onSearchQuery} 
-        />
+        <SearchForm onSubmit={onSearchQuery}> 
+            <input
+                name="search" 
+                type="text" 
+                autoComplete="off"
+                autoFocus
+                placeholder="Search movie"
+                // value={query}
+                // onChange={onSearchQuery} 
+            />
+            <button type="submit">Search</button>
+        </SearchForm> 
         {query && !noResultsFound && (
             <ResultsList>
                 {movieSearch.map (({id, name, title}) => (

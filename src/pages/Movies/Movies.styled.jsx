@@ -6,19 +6,43 @@ export const SearchContainer = styled.div`
   padding: 20px;
 `;
 
-export const SearchInput = styled.input`
-  width: 100%;
-  padding: 10px;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  outline: none;
+export const SearchForm = styled.form`
 
-  &:focus {
-    border-color: #007bff;
+  display: flex;
+  align-items:center;
+  margin-bottom: 20px;
+
+  input {
+      flex: 1;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 10px;
+
+        &:focus {
+        border-color: #007bff;
   }
+
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #0056b3;
+    }
+
+  }
+
+}
+
+
 `;
 
 export const ResultsList = styled.ul`
