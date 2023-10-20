@@ -39,4 +39,6 @@ export const MovieTitle = styled(Link)`
     font-size: 18px;
     font-weight: bold;
     margin-bottom: 5px;
+    text-decoration: none; 
+    color: inherit;
 `;

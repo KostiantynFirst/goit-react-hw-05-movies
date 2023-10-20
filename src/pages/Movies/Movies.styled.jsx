@@ -19,6 +19,10 @@ export const SearchForm = styled.form`
       border: 1px solid #007bff;
       border-radius: 5px;
       margin-right: 10px;
+
+      &:focus {
+      outline: none;
+}
   }
 
   button {
