@@ -38,7 +38,7 @@ const MovieDetails = () => {
     return (
 
         <MainWrapper>
-            <BackLink to={backLinkLocation.current}>
+            <BackLink to={backLinkLocation.current ?? '/'}>
             Go back
             </BackLink>
 

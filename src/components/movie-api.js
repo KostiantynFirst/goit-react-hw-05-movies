@@ -52,3 +52,32 @@ export const getMovieSearch = async (search) => {
       console.log('error', error);
   }
 }
+
+export const getCast = async (movieId) => {
+  try {
+    const res = await axios.get(`movie/${movieId}/credits`, {
+      params: {
+        api_key: MOVIEKEY,
+        language: 'en-US',
+      },
+    });
+    return res;
+  } catch (error) {
+    console.log('error', error);
+  }
+}
+
+export const getReviews = async (movieId) => {
+  try {
+    const res = await axios.get(`movie/${movieId}/reviews`, {
+      params: {
+        api_key: MOVIEKEY,
+        language: 'en-US',
+        page: 1,
+      }
+    });
+    return res;
+  } catch (error) {
+    console.log('error', error);
+  }
+}
