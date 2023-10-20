@@ -16,12 +16,9 @@ export const SearchForm = styled.form`
       flex: 1;
       padding: 10px;
       font-size: 16px;
-      border: 1px solid #ccc;
+      border: 1px solid #007bff;
       border-radius: 5px;
       margin-right: 10px;
-
-        &:focus {
-        border-color: #007bff;
   }
 
   button {
@@ -39,9 +36,6 @@ export const SearchForm = styled.form`
     }
 
   }
-
-}
-
 
 `;
 

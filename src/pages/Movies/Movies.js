@@ -15,8 +15,8 @@ useEffect(() => {
     setNoResultsFound(false);
 
     if(!query) {
-    setMovieSearch([]);
-    return;
+        setMovieSearch([]);
+        return;
 }
 
 const findMovie = async () => {
@@ -24,6 +24,7 @@ const findMovie = async () => {
     try {
         const res = await getMovieSearch(query);
         const movies = res.data.results;
+        console.log(movies);
             if (movies.length === 0) {
                 setNoResultsFound(true);
             } else {

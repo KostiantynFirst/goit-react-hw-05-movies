@@ -37,13 +37,14 @@ export const getMoviesInfo = async (movieId) => {
 
 export const getMovieSearch = async (search) => {
   try {
-    const res = await axios.get(`/search/movie`, {
+    const res = await axios.get(`search/movie`, {
       params: {
         api_key: MOVIEKEY,
-        adult: false,
         language: 'en-US',
+        query: search,
+        include_adult: false,
         page: 1,
-      }
+      },
     });
     return res;
     
