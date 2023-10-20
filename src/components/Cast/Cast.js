@@ -60,4 +60,4 @@ return (
     );
 };
 
-export default Cast
+export default Cast;

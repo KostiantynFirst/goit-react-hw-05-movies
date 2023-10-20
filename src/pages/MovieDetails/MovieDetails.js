@@ -46,10 +46,10 @@ const MovieDetails = () => {
                 <p>Additional information</p>
                 <InfoLinksList>
                     <li>
-                        <InfoItemLink>Cast</InfoItemLink>
+                        <InfoItemLink to={'cast'}>Cast</InfoItemLink>
                     </li>
                     <li>
-                        <InfoItemLink>Reviews</InfoItemLink>
+                        <InfoItemLink to={'reviews'}>Reviews</InfoItemLink>
                     </li>
 
                 </InfoLinksList>
