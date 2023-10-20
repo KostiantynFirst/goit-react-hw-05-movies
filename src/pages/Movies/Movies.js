@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { getMovieSearch } from "components/movie-api";
 import { SearchContainer, SearchInput, ResultsList, NoResultsMessage } from "./Movies.styled";
 
@@ -7,14 +7,11 @@ const Movies = () => {
 
 const [movieSearch, setMovieSearch] = useState([]);
 const [noResultsFound, setNoResultsFound] = useState(false);
-const [query, setQuery] = useState('');
  
 const location = useLocation();
-// const searchParams = new URLSearchParams(location.search);
-// const query = searchParams.get('search');
 
-// const [searchParams, setSearchParams ] = useSearchParams();
-// query = searchParams.get('search'); 
+const [searchParams, setSearchParams ] = useSearchParams();
+const query = searchParams.get('search'); 
    
 useEffect(() => {
 if(!query) {
@@ -51,7 +48,7 @@ return (
             autoFocus
             placeholder="Search movie"
             value={query}
-            onChange={(e) => setQuery(e.target.value)} 
+            onChange={(e) => setSearchParams(e.target.value)} 
         />
         {query && !noResultsFound && (
             <ResultsList>

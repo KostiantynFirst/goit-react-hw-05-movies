@@ -12,7 +12,7 @@ const Home = () => {
         try {
             const  res = await getTrendingMovies();
             const movies = res.data.results;
-            console.log(movies);
+            // console.log(movies);
             if (movies) {
                 setTrandingMovies(movies);
                 }
