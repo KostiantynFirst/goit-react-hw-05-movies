@@ -31,7 +31,7 @@ const MovieDetails = () => {
     }, [movieId]);
 
 
-    // console.log(movieDetails);
+    console.log(movieDetails);
     // console.log(location);
     
     
