@@ -43,6 +43,10 @@ export const OverviewHeading = styled.h2`
     margin-bottom: 10px;
 `;
 
+export const GenresHeading = styled.h2`
+    
+`
+
 export const GenreList = styled.ul`
     list-style: none;
     padding: 0;
