@@ -70,7 +70,6 @@ export const GenreItem = styled.li`
 `;
 
 
-
 // Добавим стили для User Score
 export const UserScore = styled.span`
     font-size: 18px;
