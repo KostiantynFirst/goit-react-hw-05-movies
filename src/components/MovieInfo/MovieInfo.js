@@ -1,4 +1,4 @@
-import { MovieContainer, PosterImage, MovieDetails, NoImage, MovieTitle, InfoParagraph, OverviewHeading, GenresHeading, GenreList, GenreItem, UserScore, Status, OverviewText, GenreBadge, SingleGenre } from "./MovieInfo.styled";
+import { MovieContainer, PosterImage, MovieDetails, NoImage, MovieTitle, InfoParagraph, OverviewHeading, GenresHeading, GenreList, GenreItem, UserScore, Status, OverviewText, GenreBadge } from "./MovieInfo.styled";
 
 export const MovieDetailsComponent = ({ movieInfoDetails }) => {
     const { title, original_title, release_date, overview = 'There is no overview', vote_average, genres = [], poster_path, status,} = movieInfoDetails;
@@ -7,7 +7,6 @@ export const MovieDetailsComponent = ({ movieInfoDetails }) => {
     const date = new Date(release_date).getFullYear();
     const userRate = Math.round(vote_average * 10);
     // console.log(vote_average);
-  
 
     return (
         <MovieContainer>
@@ -25,17 +24,20 @@ export const MovieDetailsComponent = ({ movieInfoDetails }) => {
                 </InfoParagraph>
                 <InfoParagraph>
                     <b>User Score: </b>
-                    {userRate}%
+                  <UserScore>{userRate}%</UserScore>  
                 </InfoParagraph>
                 <InfoParagraph>
-                    <b>Status:</b> {status}
+                    <b>Status:</b> 
+                    <Status>{status}</Status>
                 </InfoParagraph>
                 <OverviewHeading>Overview</OverviewHeading>
-                <p>{overview}</p>
+                <OverviewText>{overview}</OverviewText>
                 <GenresHeading>Genres</GenresHeading>
                 <GenreList>
                     {genres.map(genre => (
-                        <GenreItem key={genre.id}>{genre.name}</GenreItem>
+                        <GenreItem key={genre.id}>
+                            <GenreBadge>{genre.name}</GenreBadge>
+                        </GenreItem>
                     ))}
                 </GenreList>
                 </MovieDetails>

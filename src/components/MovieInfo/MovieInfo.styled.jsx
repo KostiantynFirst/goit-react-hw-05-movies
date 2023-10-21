@@ -61,7 +61,15 @@ export const GenreList = styled.ul`
 export const GenreItem = styled.li`
     font-size: 18px;
     margin-bottom: 5px;
+    ${props => props.isSingleGenre && `
+        background-color: #e74c3c;
+        color: #fff;
+        border-radius: 4px;
+        padding: 5px 10px;
+    `}
 `;
+
+
 
 // Добавим стили для User Score
 export const UserScore = styled.span`
