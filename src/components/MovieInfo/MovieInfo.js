@@ -1,4 +1,4 @@
-import { MovieContainer, PosterImage, MovieDetails, NoImage, MovieTitle, InfoParagraph, OverviewHeading, GenreList, GenreItem } from "./MovieInfo.styled";
+import { MovieContainer, PosterImage, MovieDetails, NoImage, MovieTitle, InfoParagraph, OverviewHeading, GenresHeading, GenreList, GenreItem } from "./MovieInfo.styled";
 
 export const MovieDetailsComponent = ({ movieInfoDetails }) => {
     const { title, original_title, release_date, overview = 'There is no overview', popularity, genres = [], poster_path, status,} = movieInfoDetails;
@@ -18,7 +18,7 @@ export const MovieDetailsComponent = ({ movieInfoDetails }) => {
                     {title}/{original_title}
                 </MovieTitle>
                 <InfoParagraph>
-                    <b>Release date:</b> release_date
+                    <b>Release date:</b> {date}
                 </InfoParagraph>
                 <InfoParagraph>
                     <b>User Score:</b>
@@ -30,9 +30,13 @@ export const MovieDetailsComponent = ({ movieInfoDetails }) => {
                 <OverviewHeading>Overview</OverviewHeading>
                 <p>{overview}</p>
                 <GenresHeading>Genres</GenresHeading>
-            
+                <GenreList>
+                    {genres.map(genre => (
+                        <GenreItem key={genre.id}>{genre.name}</GenreItem>
+                    ))}
+                </GenreList>
                 </MovieDetails>
             </MovieContainer>
-    )
+    );
 
-}
+};

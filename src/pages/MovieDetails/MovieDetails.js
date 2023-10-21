@@ -2,11 +2,12 @@ import { useEffect, useState, useRef, Suspense} from "react";
 import { Outlet, useLocation, useParams } from "react-router-dom";
 import { getMoviesInfo } from "components/movie-api";
 import { MainWrapper, BackLink, InfoBox, InfoLinksList, InfoItemLink } from "./MovieDetails.styled";
-
+import { MovieDetailsComponent } from "components/MovieInfo/MovieInfo";
 
 const MovieDetails = () => {
 
     const [movieDetails, setMovieDetails] = useState([]);
+    const [loading, setLoading] = useState(true);
     const location = useLocation();
     const backLinkLocation = useRef(location.state?.from);
     const { movieId } = useParams();
@@ -23,6 +24,7 @@ const MovieDetails = () => {
                 return;
             }
             setMovieDetails(res.data);
+            setLoading(false);
         }
         
         getMovieDetails();
@@ -31,7 +33,7 @@ const MovieDetails = () => {
     }, [movieId]);
 
 
-    console.log(movieDetails);
+    // console.log(movieDetails);
     // console.log(location);
     
     
@@ -41,6 +43,8 @@ const MovieDetails = () => {
             <BackLink to={backLinkLocation.current ?? '/'}>
             Go back
             </BackLink>
+
+            {!loading && <MovieDetailsComponent movieInfoDetails={movieDetails} />}
 
             <InfoBox>
                 <p>Additional information</p>

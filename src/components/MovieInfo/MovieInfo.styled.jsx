@@ -44,7 +44,9 @@ export const OverviewHeading = styled.h2`
 `;
 
 export const GenresHeading = styled.h2`
-    
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 `
 
 export const GenreList = styled.ul`
