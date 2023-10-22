@@ -14,9 +14,17 @@ const Reviews = () => {
 
         const getReviewsDetails = async () => {
             const res = await getReviews(movieId);
-            
+            setReviewsDetails(res.data.results);
+            setLoading(false);
         }
-    })
+
+        getReviewsDetails();
+    }, [movieId, setReviewsDetails]);
+
+
+    return (
+
+    );
 
 }
 
