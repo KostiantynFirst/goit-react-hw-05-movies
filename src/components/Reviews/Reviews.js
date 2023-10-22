@@ -22,7 +22,6 @@ const Reviews = () => {
         getReviewsDetails();
     }, [movieId, setReviewsDetails]);
 
-
     return (
         <ReviewsContainer>
 
@@ -36,7 +35,9 @@ const Reviews = () => {
                     </AuthorInfo>
                     <ReviewContent>{content}</ReviewContent>
                 </ReviewItem>
-            ))}
+                // console.log(content)
+            ))
+            }
         </ReviewsInfolist>
     ) : (
         <NoInfoMessage>We don't have information for this movie</NoInfoMessage>
@@ -44,5 +45,7 @@ const Reviews = () => {
         </ReviewsContainer>
 )
 }
+
+
 
 export default Reviews;
