@@ -4,7 +4,7 @@ export const MovieContainer = styled.div`
     font-family: Arial, sans-serif;
     display: flex;
     gap: 20px;
-    padding: 20px;
+    /* padding: 20px; */
 `;
 
 export const PosterImage = styled.img`

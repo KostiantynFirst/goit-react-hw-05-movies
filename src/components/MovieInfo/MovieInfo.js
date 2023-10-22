@@ -27,7 +27,7 @@ export const MovieDetailsComponent = ({ movieInfoDetails }) => {
                   <UserScore>{userRate}%</UserScore>  
                 </InfoParagraph>
                 <InfoParagraph>
-                    <b>Status:</b> 
+                    <b>Status: </b> 
                     <Status>{status}</Status>
                 </InfoParagraph>
                 <OverviewHeading>Overview</OverviewHeading>
