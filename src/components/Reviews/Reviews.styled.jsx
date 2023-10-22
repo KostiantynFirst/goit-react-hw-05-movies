@@ -35,3 +35,13 @@ export const AuthorName = styled.div`
     font-weight: bold;
 `;
 
+export const ReviewContent = styled.p`
+    font-size: 16px;
+    line-height: 1.5;
+`;
+
+export const NoInfoMessage = styled.div`
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+`;
