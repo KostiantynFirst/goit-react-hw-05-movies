@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css",
-    "main.js": "/goit-react-hw-05-movies/static/js/main.2fa23b03.js",
+    "main.js": "/goit-react-hw-05-movies/static/js/main.740327ea.js",
     "static/js/820.50096fe0.chunk.js": "/goit-react-hw-05-movies/static/js/820.50096fe0.chunk.js",
     "static/js/547.ea45850e.chunk.js": "/goit-react-hw-05-movies/static/js/547.ea45850e.chunk.js",
-    "static/js/305.a0eda45f.chunk.js": "/goit-react-hw-05-movies/static/js/305.a0eda45f.chunk.js",
+    "static/js/305.166b0f37.chunk.js": "/goit-react-hw-05-movies/static/js/305.166b0f37.chunk.js",
     "static/js/73.f38a8564.chunk.js": "/goit-react-hw-05-movies/static/js/73.f38a8564.chunk.js",
     "static/js/514.a3b7d901.chunk.js": "/goit-react-hw-05-movies/static/js/514.a3b7d901.chunk.js",
     "static/js/279.4d9ceca7.chunk.js": "/goit-react-hw-05-movies/static/js/279.4d9ceca7.chunk.js",
     "index.html": "/goit-react-hw-05-movies/index.html",
     "main.7acaea2f.css.map": "/goit-react-hw-05-movies/static/css/main.7acaea2f.css.map",
-    "main.2fa23b03.js.map": "/goit-react-hw-05-movies/static/js/main.2fa23b03.js.map",
+    "main.740327ea.js.map": "/goit-react-hw-05-movies/static/js/main.740327ea.js.map",
     "820.50096fe0.chunk.js.map": "/goit-react-hw-05-movies/static/js/820.50096fe0.chunk.js.map",
     "547.ea45850e.chunk.js.map": "/goit-react-hw-05-movies/static/js/547.ea45850e.chunk.js.map",
-    "305.a0eda45f.chunk.js.map": "/goit-react-hw-05-movies/static/js/305.a0eda45f.chunk.js.map",
+    "305.166b0f37.chunk.js.map": "/goit-react-hw-05-movies/static/js/305.166b0f37.chunk.js.map",
     "73.f38a8564.chunk.js.map": "/goit-react-hw-05-movies/static/js/73.f38a8564.chunk.js.map",
     "514.a3b7d901.chunk.js.map": "/goit-react-hw-05-movies/static/js/514.a3b7d901.chunk.js.map",
     "279.4d9ceca7.chunk.js.map": "/goit-react-hw-05-movies/static/js/279.4d9ceca7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7acaea2f.css",
-    "static/js/main.2fa23b03.js"
+    "static/js/main.740327ea.js"
   ]
 }
