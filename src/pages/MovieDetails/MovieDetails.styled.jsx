@@ -9,7 +9,7 @@ export const MainWrapper = styled.div`
 
 export const BackLink = styled(Link)`
   text-decoration: none;
-  color: #007bff;
+  color: #333;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
