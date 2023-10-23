@@ -6,7 +6,7 @@ export const MovieContainer = styled.div`
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    @media (mon-width: 768px) {
+    @media (min-width: 768px) {
         flex-direction: row;
     }
 `;
