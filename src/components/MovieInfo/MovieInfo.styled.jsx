@@ -3,15 +3,23 @@ import styled from "styled-components";
 export const MovieContainer = styled.div`
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     gap: 20px;
-    /* padding: 20px; */
+    padding: 20px;
+    @media (mon-width: 768px) {
+        flex-direction: row;
+    }
 `;
 
 export const PosterImage = styled.img`
-    width: 300px;
+    width: 100%;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    @media (min-width: 768px) {
+        width: 300px;
+        height: auto;
+    }
 `;
 
 export const MovieDetails = styled.div`
@@ -61,12 +69,6 @@ export const GenreList = styled.ul`
 export const GenreItem = styled.li`
     font-size: 18px;
     margin-bottom: 5px;
-    ${props => props.isSingleGenre && `
-        background-color: #e74c3c;
-        color: #fff;
-        border-radius: 4px;
-        padding: 5px 10px;
-    `}
 `;
 
 
@@ -98,9 +100,4 @@ export const GenreBadge = styled.span`
     border-radius: 4px;
     padding: 5px 10px;
     margin-right: 10px;
-`;
-
-// Добавим стили для отдельного жанра
-export const SingleGenre = styled(GenreBadge)`
-    background-color: #e74c3c;
 `;
